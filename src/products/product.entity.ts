@@ -22,6 +22,9 @@ export class Product {
 
   @Column({ type: 'date' })
   expiration: string;
+  
+  @Column({ type: 'date' })
+  notify_before_expiration: string;
 
   @CreateDateColumn()
   createdAt: Date;

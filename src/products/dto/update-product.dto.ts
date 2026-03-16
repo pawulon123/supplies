@@ -18,4 +18,7 @@ export class UpdateProductDto {
   @IsOptional()
   @IsDateString()
   expiration?: string;
+  @IsOptional()
+  @IsDateString()
+  notify_before_expiration?: string;
 }

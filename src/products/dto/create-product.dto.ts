@@ -15,4 +15,7 @@ export class CreateProductDto {
 
   @IsDateString()
   expiration: string;
+  
+  @IsDateString()
+  notify_before_expiration: string;
 }
