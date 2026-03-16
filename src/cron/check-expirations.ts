@@ -28,23 +28,22 @@ async function main() {
     },
   });
 
-//   if (products.length === 0) {
-//     console.log('Brak produktów do powiadomienia');
-//     await dataSource.destroy();
-//     process.exit(0);
-//   }
+  if (products.length === 0) {
+    console.log('Brak produktów do powiadomienia');
+    await dataSource.destroy();
+    process.exit(0);
+  }
 
   const client = Twilio(
     process.env.TWILIO_ACCOUNT_SID!,
     process.env.TWILIO_AUTH_TOKEN!,
   );
 
-//   const lines = products.map(
-//     (p) => `${p.name} | ilość: ${p.quantity} | ważność: ${p.expiration}`,
-//   );
+  const lines = products.map(
+    (p) => `${p.name} | ilość: ${p.quantity} | ważność: ${p.expiration}`,
+  );
 
-//   const message = `Produkty z krótką datą:\n${lines.join('\n')}`;
-  const message = `Produkty z krótką datą:\nfffffffffff}`;
+  const message = `Produkty z krótką datą:\n${lines.join('\n')}`;
 
   await client.messages.create({
     from: process.env.TWILIO_PHONE_NUMBER!,
