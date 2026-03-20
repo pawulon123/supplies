@@ -7,10 +7,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "start:job:expiration": "node dist/cron/run-expiration-job.js",
     "start": "nest start",
-    "start:dev": "nest start --watch",
     "start:prod": "node dist/main",
+    "start:job:all": "node dist/cron/run-all-jobs.js",
+    "start:dev": "nest start --watch",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start:debug": "nest start --debug --watch",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
