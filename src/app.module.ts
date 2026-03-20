@@ -4,6 +4,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
 import { SmsModule } from './sms/sms.module';
 import { MailModule } from './mail/mail.module';
+import { JobsModule } from './jobs/jobs.module';
+import { CronService } from './cron/cron.service';
+import { CronModule } from './cron/cron.module';
 
 @Module({
   imports: [
@@ -19,6 +22,9 @@ import { MailModule } from './mail/mail.module';
     ProductsModule,
     SmsModule,
     MailModule,
+    JobsModule,
+    CronModule,
   ],
+  providers: [CronService],
 })
 export class AppModule {}

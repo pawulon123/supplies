@@ -49,4 +49,19 @@ export class ProductsService {
 
     return { message: `Product with id ${id} deleted` };
   }
+  async findExpiringSoon(days: number): Promise<Product[]> {
+  const today = new Date();
+  const targetDate = new Date();
+  targetDate.setDate(today.getDate() + days);
+
+  const todayStr = today.toISOString().slice(0, 10);
+  const targetStr = targetDate.toISOString().slice(0, 10);
+
+  return this.productsRepository
+    .createQueryBuilder('product')
+    .where('product.expiration >= :today', { today: todayStr })
+    .andWhere('product.expiration <= :target', { target: targetStr })
+    .orderBy('product.expiration', 'ASC')
+    .getMany();
+}
 }
