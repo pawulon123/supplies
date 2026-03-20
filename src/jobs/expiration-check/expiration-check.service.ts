@@ -18,10 +18,10 @@ export class ExpirationCheckService {
 
     const products = await this.productsService.findExpiringSoon(3);
 
-    if (!products.length) {
-      this.logger.log('Brak produktów z krótką datą ważności');
-      return;
-    }
+    // if (!products.length) {
+    //   this.logger.log('Brak produktów z krótką datą ważności');
+    //   return;
+    // }
 
     const lines = products.map(
       (product) =>
