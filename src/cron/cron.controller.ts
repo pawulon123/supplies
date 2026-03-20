@@ -9,4 +9,9 @@ export class CronController {
   async checkExpiration() {
     return this.cronService.runExpirationCheck();
   }
+
+  @Post('daily-report')
+  async dailyReport() {
+    return this.cronService.runDailyReport();
+  }
 }

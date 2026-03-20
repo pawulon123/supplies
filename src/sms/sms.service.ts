@@ -3,7 +3,7 @@ import Twilio from 'twilio';
 
 @Injectable()
 export class SmsService {
-  private client: Twilio.Twilio;
+  private client: Twilio.Twilio;;s
 
   constructor() {
     const accountSid = process.env.TWILIO_ACCOUNT_SID;

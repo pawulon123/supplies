@@ -8,6 +8,6 @@ import { DailyReportService } from './daily-report/daily-report.service';
 @Module({
   imports: [ProductsModule, SmsModule, MailModule],
   providers: [ExpirationCheckService, DailyReportService],
-  exports: [ExpirationCheckService, DailyReportService],
+  exports: [ExpirationCheckService, DailyReportService],  
 })
 export class JobsModule {}
