@@ -8,7 +8,7 @@ export class Esp32Service {
 
   async handleEvent(dto: CreateEsp32EventDto) {
     this.logger.log(`ESP32 event from ${dto.deviceId}: ${dto.type}`);
-    this.logger.log(` ${dto.payload}`);
+    this.logger.log(JSON.stringify(dto));
 
     // Tu możesz:
     // - zapisać do bazy
