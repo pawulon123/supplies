@@ -24,11 +24,6 @@ export class Esp32Service {
       this.logger.log(`Wysłano SMS na ${alertPhone}`);
     }
     
-    // Tu możesz:
-    // - zapisać do bazy
-    // - odpalić SMS/email
-    // - wrzucić job do crona/queue
-    // - zaktualizować status urządzenia
 
     return {
       ok: true,
