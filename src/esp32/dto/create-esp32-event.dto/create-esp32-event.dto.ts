@@ -15,10 +15,18 @@ export class CreateEsp32EventDto {
 
   @IsOptional()
   @IsObject()
-  payload?: Record<string, unknown>;
+  payload?: Esp32Payload;;
 
   @IsOptional()
   @IsString()
   @MaxLength(128)
   firmwareVersion?: string;
+}
+
+export interface Esp32Payload {
+  event?: string;
+  temperature?: number;
+  pressure?: number;
+  humidity?: number;
+  usageMinutes?: number;
 }
