@@ -17,7 +17,7 @@ export class Esp32Service {
     const espObj = esp32DtoToObject(dto)
     
     const smsMessage = 'Restart'
-    const alertPhone = process.env.ALERT_PHONE_NUMBER;
+    const alertPhone = process.env.ALERT_PHONE;
 if(espObj.event)
     this.logger.log(espObj.event, alertPhone);
   
