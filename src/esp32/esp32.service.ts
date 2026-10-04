@@ -18,7 +18,7 @@ export class Esp32Service {
     
     const smsMessage = 'Restart'
     const alertPhone = process.env.ALERT_PHONE_NUMBER;
-    this.logger.log(espObj.event, espObj);
+    this.logger.log(espObj.event, alertPhone);
     if(espObj.event && alertPhone){
       this.logger.log('after',espObj.event, espObj);
       await this.smsService.sendSms(alertPhone, smsMessage);
