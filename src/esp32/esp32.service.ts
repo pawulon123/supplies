@@ -14,11 +14,11 @@ export class Esp32Service {
   ) {}
   async handleEvent(dto: CreateEsp32EventDto) {
     this.logger.log(`ESP32 event from ${dto.deviceId}: ${dto.type}`);
-    this.logger.log(JSON.stringify(dto));
     const espObj = esp32DtoToObject(dto)
     
     const smsMessage = 'Restart'
     const alertPhone = process.env.ALERT_PHONE_NUMBER;
+    this.logger.log(espObj.event);
     if(espObj.event && alertPhone){
       await this.smsService.sendSms(alertPhone, smsMessage);
       this.logger.log(`Wysłano SMS na ${alertPhone}`);
