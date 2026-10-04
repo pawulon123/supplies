@@ -23,7 +23,7 @@ if(espObj.event)
   
   
   if (alertPhone) {
-  this.logger.log(alertPhone);
+  this.logger.log('tel',alertPhone);
   
 }
     if(espObj.event && alertPhone){
