@@ -15,7 +15,7 @@ export class Esp32Service {
   async handleEvent(dto: CreateEsp32EventDto) {
     const espObj = esp32DtoToObject(dto)
     
-    const smsMessage = `RESTART
+    const smsMessage = `RESTART ${espObj.nameSensor},
     Temp: ${espObj.temperature},
     Ciśnienie: ${espObj.pressure},
     Wilgotność ${espObj.humidity}

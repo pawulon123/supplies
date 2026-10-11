@@ -29,4 +29,5 @@ export interface Esp32Payload {
   pressure?: number;
   humidity?: number;
   usageMinutes?: number;
+  nameSensor?: string;
 }
