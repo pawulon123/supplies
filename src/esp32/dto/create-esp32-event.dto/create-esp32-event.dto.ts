@@ -15,7 +15,7 @@ export class CreateEsp32EventDto {
 
   @IsOptional()
   @IsObject()
-  payload?: Esp32Payload;;
+  payload?: Esp32Payload;
 
   @IsOptional()
   @IsString()
