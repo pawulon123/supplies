@@ -8,6 +8,7 @@ import { JobsModule } from './jobs/jobs.module';
 import { CronService } from './cron/cron.service';
 import { CronModule } from './cron/cron.module';
 import { Esp32Module } from './esp32/esp32.module';
+import { TelegramModule } from './telegram/telegram.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { Esp32Module } from './esp32/esp32.module';
     JobsModule,
     CronModule,
     Esp32Module,
+    TelegramModule,
   ],
   providers: [CronService],
 })

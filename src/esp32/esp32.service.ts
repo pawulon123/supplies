@@ -2,17 +2,28 @@ import { Injectable, Logger } from '@nestjs/common';
 import { CreateEsp32EventDto } from './dto/create-esp32-event.dto/create-esp32-event.dto';
 import { esp32DtoToObject } from 'src/common/utils/transform-object';
 import { SmsService } from 'src/sms/sms.service';
+import { TelegramService } from 'src/telegram/telegram.service';
 
 
 @Injectable()
 export class Esp32Service {
   private readonly logger = new Logger(Esp32Service.name);
  constructor(
-
+  private readonly telegramService: TelegramService,
     private readonly smsService: SmsService,
     
   ) {}
   async handleEvent(dto: CreateEsp32EventDto) {
+
+if (dto.type === 'alarm') {
+  
+  await this.telegramService.sendMessage(
+    `ALARM ESP32\nUrządzenie: ${dto.deviceId}`,
+  );
+}
+
+
+
     const espObj = esp32DtoToObject(dto)
     
     const smsMessage = `RESTART ${espObj.nameSensor},
